@@ -6,7 +6,7 @@
 
 ```yaml
 - name: Update Cronjob
-  uses: MultiMx/K8sSetCronJobImageAction@v0.1
+  uses: MultiMx/K8sSetCronJobImageAction@v0.2
   with:
     backend: 'https://some.rancher.com'
     token: ${{ secrets.CATTLE_TOKEN }} # rancher api bearer token
