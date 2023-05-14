@@ -5,15 +5,14 @@
 ## 使用
 
 ```yaml
-- name: Update Deployment
-  uses: MultiMx/K8sSetImageAction@v0.2
+- name: Update Cronjob
+  uses: MultiMx/K8sSetCronJobImageAction@v0.1
   with:
     backend: 'https://some.rancher.com'
     token: ${{ secrets.CATTLE_TOKEN }} # rancher api bearer token
     namespace: 'control'
-    deployment: 'apicenter'
+    cronjob: 'apicenter'
     image: image.url:version
     container: 1 # optional, container index number, default 0
-    wait: true # optional, wait for deployment full available, default false
     cluster: some_cluster # optional, cluster name, default local
 ```
