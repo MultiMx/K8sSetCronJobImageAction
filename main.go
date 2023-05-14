@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/MultiMx/K8sSetImageAction/controllers"
-	"github.com/MultiMx/K8sSetImageAction/global"
-	"github.com/MultiMx/K8sSetImageAction/pkg/kube"
+	"github.com/MultiMx/K8sSetCronJobImageAction/controllers"
+	"github.com/MultiMx/K8sSetCronJobImageAction/global"
+	"github.com/MultiMx/K8sSetCronJobImageAction/pkg/kube"
 	log "github.com/sirupsen/logrus"
 )
 

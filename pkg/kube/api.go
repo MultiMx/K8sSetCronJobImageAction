@@ -3,7 +3,7 @@ package kube
 import (
 	"fmt"
 	"github.com/Mmx233/tool"
-	"github.com/MultiMx/K8sSetImageAction/util"
+	"github.com/MultiMx/K8sSetCronJobImageAction/util"
 	"io"
 	"net/http"
 )

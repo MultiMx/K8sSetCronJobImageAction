@@ -1,7 +1,7 @@
 package global
 
 import (
-	"github.com/MultiMx/K8sSetImageAction/global/models"
+	"github.com/MultiMx/K8sSetCronJobImageAction/global/models"
 	"github.com/caarlos0/env/v6"
 	log "github.com/sirupsen/logrus"
 )

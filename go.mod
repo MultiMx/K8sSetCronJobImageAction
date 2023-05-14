@@ -1,4 +1,4 @@
-module github.com/MultiMx/K8sSetImageAction
+module github.com/MultiMx/K8sSetCronJobImageAction
 
 go 1.19
 
