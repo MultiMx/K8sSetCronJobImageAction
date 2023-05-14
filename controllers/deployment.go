@@ -2,7 +2,6 @@ package controllers
 
 import (
 	"errors"
-	"fmt"
 	"github.com/MultiMx/K8sSetCronJobImageAction/global"
 	"github.com/MultiMx/K8sSetCronJobImageAction/pkg/kube"
 	log "github.com/sirupsen/logrus"
@@ -23,36 +22,5 @@ func SetImage(api *kube.Kube) error {
 			return errors.New("failed: maximum number of attempts reached")
 		}
 		time.Sleep(time.Second)
-	}
-}
-
-func WaitDeploymentAvailable(api *kube.Kube) error {
-	var err = make(chan error)
-	go func() {
-		var counter uint8 = 0
-		var ok bool
-		var e error
-		for {
-			time.Sleep(time.Second)
-			if ok, e = api.DeploymentFullAvailable(); e != nil {
-				counter++
-				log.Warnf("get deployment status failed: %v", e)
-				if counter >= 5 {
-					err <- errors.New("failed: maximum number of attempts reached")
-					return
-				}
-				continue
-			} else if ok {
-				err <- nil
-				return
-			}
-			counter = 0
-		}
-	}()
-	select {
-	case e := <-err:
-		return e
-	case <-time.After(time.Minute * 5):
-		return fmt.Errorf("deployment available waiting timeout")
 	}
 }
