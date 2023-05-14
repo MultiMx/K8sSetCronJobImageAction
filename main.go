@@ -14,11 +14,4 @@ func main() {
 	if e != nil {
 		log.Fatalln(e)
 	}
-
-	if global.Config.Wait {
-		log.Infoln("waiting...")
-		if e = controllers.WaitDeploymentAvailable(api); e != nil {
-			log.Fatalln(e)
-		}
-	}
 }
